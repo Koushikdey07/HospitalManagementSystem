@@ -21,7 +21,19 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 				<div class="card paint-card">
 					<div class="card-body">
 						<p class="fs-4 text-center">Doctor Login</p>
-						<form action="#" method="post">
+						
+						<c:if test="${not empty successMessage }">
+							<p class="text-center text-success fs-3"> ${successMessage} </p>
+							<c:remove var="successMessage" scope="session"/>
+						</c:if>
+						
+						<c:if test="${not empty errorMessage }">
+							<p class="text-center text-danger fs-3"> ${errorMessage} </p>
+							<c:remove var="errorMessage" scope="session"/>
+						</c:if>
+						
+						
+						<form action="doctorLogin" method="post">
 							<div class="mb-3">
 								<label class="form-label">Email address</label> <input required
 									name="email" type="email" class="form-control">

@@ -13,6 +13,7 @@ import com.dao.UserDao;
 import com.db.DBConnect;
 import com.entity.User;
 
+@SuppressWarnings("serial")
 @WebServlet("/userLogin")
 public class UserLogin extends HttpServlet{
 
