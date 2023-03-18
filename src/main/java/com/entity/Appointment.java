@@ -17,6 +17,26 @@ public class Appointment {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public Appointment(int id, int userId, String fullName, String gender, String age, String appointDate, String email,
+			String contact, String diseases, int doctorId, String address, String status) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.fullName = fullName;
+		this.gender = gender;
+		this.age = age;
+		this.appointDate = appointDate;
+		this.email = email;
+		this.contact = contact;
+		this.diseases = diseases;
+		this.doctorId = doctorId;
+		this.address = address;
+		this.status = status;
+	}
+
+
 	public Appointment(int userId, String fullName, String gender, String age, String appointDate, String email,
 			String contact, String diseases, int doctorId, String address, String status) {
 		super();
