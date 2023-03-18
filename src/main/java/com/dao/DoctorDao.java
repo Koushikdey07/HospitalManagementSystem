@@ -167,4 +167,41 @@ public class DoctorDao {
 		return d;
 	}
 	
+	public int countDoctor() {
+		int i=0;
+		try {
+			String sql = "select id,name,dob,qualification,specialist,email,contact,password from doctor_details";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				i++;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
+	
+	public int countAppointmentByDocotrId(int id) {
+		int i = 0;
+		try {
+			String sql = "select id,user_id,fullname ,gender,age,appoint_date,email,contact,diseases,doctor_id,address,status from appointment where doctor_id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				i++;
+			}
+	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
+	
+	
 }

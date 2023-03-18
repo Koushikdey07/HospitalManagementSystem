@@ -1,10 +1,10 @@
-<%@page import="com.entity.Doctor"%>
-<%@page import="com.db.DBConnect"%>
-<%@page import="com.dao.DoctorDao"%>
-
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="com.entity.Doctor"%>
+<%@page import="com.db.DBConnect"%>
+<%@page import="com.dao.DoctorDao"%>
 <%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +13,14 @@
 <style type="text/css">
 .paint-card{
 box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+.backImg {
+	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+		url("../img/hospital.jpg");
+	height: 20vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 </style>
 <%@include file="../component/all_css.jsp" %>
@@ -23,10 +31,10 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 	</c:if>
 	<%@include file="navbar.jsp" %>
 	
-	<p class="text-center fs-3">Doctor Dashboard</p>
+	<!-- <p class="text-center fs-3">Doctor Dashboard</p> -->
 
 	<%
-	Doctor d = (Doctor) session.getAttribute("doctObj");
+	Doctor d = (Doctor) session.getAttribute("docObj");
 	DoctorDao dao = new DoctorDao(DBConnect.getConn());
 	%>
 	<div class="container p-5">
@@ -49,7 +57,7 @@ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 						<i class="far fa-calendar-check fa-3x"></i><br>
 						<p class="fs-4 text-center">
 							Total Appointment <br>
-							<%-- <%=dao.countAppointmentByDocotrId(d.getId())%> --%>
+						<%=dao.countAppointmentByDocotrId(d.getId())%> 
 						</p>
 					</div>
 				</div>
