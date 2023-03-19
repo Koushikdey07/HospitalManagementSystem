@@ -26,7 +26,7 @@ public class UserRegister extends HttpServlet{
 			String password = req.getParameter("password");
 			
 			// Nilanjana Saha  04-03-2023
-			password = doHashing(password);
+			//password = doHashing(password);
 			
 			User u = new User(fullName,email,password);
 			

@@ -203,5 +203,31 @@ public class DoctorDao {
 		return i;
 	}
 	
+	public boolean updateEditDoctor(Doctor d) {
+		boolean f = false;
+
+		try {
+			String sql = "update doctor_details set name=?,dob=?,qualification=?,specialist=?,email=?,contact=?,password=? where id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, d.getFullName());
+			ps.setString(2, d.getDob());
+			ps.setString(3, d.getQualification());
+			ps.setString(4, d.getSpecialist());
+			ps.setString(5, d.getEmail());
+			ps.setString(6, d.getContactNo());
+			ps.setString(7, d.getPassword());
+			ps.setInt(8, d.getId());
+			int i = ps.executeUpdate();
+
+			if (i == 1) {
+				f = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return f;
+	}
+	
 	
 }

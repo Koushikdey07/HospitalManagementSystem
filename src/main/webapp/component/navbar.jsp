@@ -38,7 +38,7 @@
 					role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-circle-user">
 					 </i> ${userObj.fullName}</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item" href="#">Change Password</a></li>
+						<li><a class="dropdown-item" href="change_password.jsp">Change Password</a></li>
 						<li><a class="dropdown-item" href="userLogout">Logout</a></li>
 					</ul>
 					</li>

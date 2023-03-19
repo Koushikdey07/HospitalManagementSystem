@@ -26,7 +26,7 @@ public class UserLogin extends HttpServlet{
 			String password = req.getParameter("password");
 			
 			// Nilanjana Saha  04-03-2023
-			password = UserRegister.doHashing(password);
+			//password = UserRegister.doHashing(password);
 			
 			UserDao dao = new UserDao(DBConnect.getConn());
 			User user = dao.login(email, password);
