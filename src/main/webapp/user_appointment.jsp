@@ -27,7 +27,7 @@ response.setDateHeader("Expires", 0);
 .backImg {
 	background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
 		url("images/hospital_bg.jpg");
-	height: 20vh;
+	height: 22vh;
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -37,7 +37,7 @@ response.setDateHeader("Expires", 0);
 <body>
 	<%@include file="component/navbar.jsp"%>
 
-	<div class="container-fulid backImg p-5">
+	<div class="container-fulid backImg p-2">
 		<p class="text-center fs-2 text-white"></p>
 	</div>
 	<div class="container p-3">

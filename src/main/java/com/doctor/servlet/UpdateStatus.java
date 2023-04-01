@@ -41,6 +41,4 @@ public class UpdateStatus extends HttpServlet{
 			e.printStackTrace();
 		}
 	}
-	
-
 }
