@@ -1,4 +1,3 @@
 *.sol linguist-detectable=true
 *.java linguist-detectable=true  
-*.tag linguist-detectable=true   
 *.xml linguist-detectable=true 
